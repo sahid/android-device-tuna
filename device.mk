@@ -79,7 +79,8 @@ PRODUCT_COPY_FILES += \
 	device/samsung/tuna/ueventd.tuna.rc:root/ueventd.tuna.rc \
 	device/samsung/tuna/media_profiles.xml:system/etc/media_profiles.xml \
 	device/samsung/tuna/media_codecs.xml:system/etc/media_codecs.xml \
-	device/samsung/tuna/gps.conf:system/etc/gps.conf
+	device/samsung/tuna/gps.conf:system/etc/gps.conf \
+	device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 
 # Wifi
 ifneq ($(TARGET_PREBUILT_WIFI_MODULE),)
@@ -143,6 +144,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
+
+# HACK: copy panda init for now to boot on both boards
+PRODUCT_COPY_FILES += \
+	device/ti/panda/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc
 
 # Melfas touchscreen firmware
 PRODUCT_COPY_FILES += \
