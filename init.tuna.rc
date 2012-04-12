@@ -71,6 +71,9 @@ on fs
 	restorecon /factory/bluetooth
 	restorecon /factory/bluetooth/bt_addr
 	mount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/efs /factory ro remount
+	mount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/system /system wait rw
+	chmod 0755 /system/b2g/b2g
+	chmod 0755 /system/b2g/updater
 	setprop ro.crypto.fuse_sdcard true
 
 # change permissions for mtd device
